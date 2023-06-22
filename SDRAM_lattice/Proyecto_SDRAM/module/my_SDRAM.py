@@ -12,8 +12,6 @@ class SDRAMverilog(Module,AutoCSR):
       #self.uart_rxd = data.uart_rxd
       self.sys_D = data.sys_D 
       self.sdr_DQ = data.sdr_DQ
-#inout [15:0]               sys_D;
-#inout [3:0]                sdr_DQ;
    # registros solo lectura      
       self.sys_REF_ACK  = CSRStatus()
       self.sys_D_VALID = CSRStatus()
@@ -34,15 +32,15 @@ class SDRAMverilog(Module,AutoCSR):
       self.sys_ADSn  = CSRStorage()
       self.sys_DLY_100US  = CSRStorage()
       self.sys_REF_REQ = CSRStorage()
-      self.sys_A  = CSRStorage(23)#definir bits
+      self.sys_A  = CSRStorage(23)
       #self.sys_D = CSRStorage(16)
       #self.sdr_DQ = CSRStorage(4)
    # Instanciación del módulo verilog     
       self.specials +=Instance("sdr_top", 
 	         i_sys_CLK       = self.sys_CLK,
           	i_sys_RESET     = self.sys_RESET,
-	      #   io_sys_D = self.sys_D,
-          # io_sdr_DQ= self.sdr_DQ,
+	        io_sys_D = self.sys_D,
+                io_sdr_DQ= self.sdr_DQ,
             o_sys_REF_ACK   = self.sys_REF_ACK.status,
 	         o_sys_D_VALID = self.sys_D_VALID.status,
 	         o_sys_CYC_END = self.sys_CYC_END.status,
