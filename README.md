@@ -5,4 +5,9 @@ Link código fuente verilog en proyecto "SDRAM_Lattice": https://www.latticesemi
 
 Link código fuente verilog en proyecto "SDRAM_Lattice": https://www.allaboutcircuits.com/ip-cores/memory-core/sdram-16bit/
 
+Otros controladores consultados:
+
+https://www.fpga4fun.com/SDRAM2.html
+
+https://alchitry.com/sdram-verilog
 
